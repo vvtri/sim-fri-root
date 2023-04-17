@@ -1,0 +1,6 @@
+[submodule "auth-service"]
+	path = auth-service
+	url = https://github.com/vvtri/sim-fri-auth-service
+[submodule "common"]
+	path = common
+	url = https://github.com/vvtri/sim-fri-common

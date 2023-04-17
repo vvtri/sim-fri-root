@@ -1,0 +1,27 @@
+{
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "git.branchProtection": ["develop", "prod", "stage"],
+  "git.branchProtectionPrompt": "alwaysCommitToNewBranch",
+  "cSpell.enableFiletypes": ["shellscript"],
+  "cSpell.ignorePaths": ["**/package.json"],
+  "cSpell.ignoreRegExpList": [
+    "vitadairy",
+    "typeorm",
+    "nestjs",
+    "ilike",
+    "dtos",
+    "fastify",
+    "casl",
+    "authen",
+    "ticate",
+    "csprng",
+    "timestamptz",
+    "timestamp",
+    "presign",
+    "bili",
+    "devs"
+  ],
+  "github-actions.workflows.pinned.workflows": [
+    ".github/workflows/loyalty-event-deploy.yaml"
+  ]
+}
