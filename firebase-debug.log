@@ -1,0 +1,85 @@
+[debug] [2023-04-18T13:33:11.220Z] ----------------------------------------------------------------------
+[debug] [2023-04-18T13:33:11.221Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\tri\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2023-04-18T13:33:11.222Z] CLI Version:   11.25.2
+[debug] [2023-04-18T13:33:11.222Z] Platform:      win32
+[debug] [2023-04-18T13:33:11.222Z] Node Version:  v18.14.0
+[debug] [2023-04-18T13:33:11.223Z] Time:          Tue Apr 18 2023 20:33:11 GMT+0700 (Indochina Time)
+[debug] [2023-04-18T13:33:11.223Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-04-18T13:33:11.320Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-04-18T13:33:11.320Z] > authorizing via signed-in user (vtri2016@gmail.com)
+[info] i  emulators: Starting emulators: auth {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth"}}
+[debug] [2023-04-18T13:33:11.328Z] [auth] Authentication Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[warn] !  logging: Logging Emulator unable to start on port 4500, starting on 4542 instead. {"metadata":{"emulator":{"name":"logging"},"message":"Logging Emulator unable to start on port 4500, starting on 4542 instead."}}
+[debug] [2023-04-18T13:33:11.339Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-04-18T13:33:11.340Z] [ui] portUtils: skipping restricted port 4045
+[warn] !  ui: Emulator UI unable to start on port 4000, starting on 4046 instead. {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI unable to start on port 4000, starting on 4046 instead."}}
+[warn] !  hub: emulator hub unable to start on port 4400, starting on 4543 instead. {"metadata":{"emulator":{"name":"hub"},"message":"emulator hub unable to start on port 4400, starting on 4543 instead."}}
+[debug] [2023-04-18T13:33:11.351Z] assigned listening specs for emulators {"user":{"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4542}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4046},{"address":"::1","family":"IPv6","port":4046}],"hub":[{"address":"127.0.0.1","family":"IPv4","port":4543},{"address":"::1","family":"IPv6","port":4543}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2023-04-18T13:33:11.359Z] [hub] writing locator at C:\Users\tri\AppData\Local\Temp\hub-simfri-d59dd.json
+[debug] [2023-04-18T13:33:16.666Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-04-18T13:33:16.666Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2023-04-18T13:33:16.667Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\tri\\.cache\\firebase\\emulators\\ui-v1.11.4\\server\\server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\tri\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.11.4\\\\server\\\\server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2023-04-18T13:33:16.781Z] Web / API server started at 127.0.0.1:4046
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4046\n"}}
+[debug] [2023-04-18T13:33:16.781Z] Web / API server started at ::1:4046
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4046\n"}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4046/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────────┬────────────────┬────────────────────────────┐
+│ Emulator       │ Host:Port      │ View in Emulator UI        │
+├────────────────┼────────────────┼────────────────────────────┤
+│ Authentication │ 127.0.0.1:9099 │ http://127.0.0.1:4046/auth │
+└────────────────┴────────────────┴────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4543
+  Other reserved ports: 4542
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2023-04-18T14:09:47.934Z] Received signal SIGINT (Ctrl-C) 1
+[info]  
+[info] i  emulators: Received SIGINT (Ctrl-C) for the first time. Starting a clean shutdown. 
+[info] i  emulators: Please wait for a clean shutdown or send the SIGINT (Ctrl-C) signal again to stop right now. 
+[info] i  emulators: Shutting down emulators. {"metadata":{"emulator":{"name":"hub"},"message":"Shutting down emulators."}}
+[info] i  ui: Stopping Emulator UI {"metadata":{"emulator":{"name":"ui"},"message":"Stopping Emulator UI"}}
+[warn] !  Emulator UI has exited upon receiving signal: SIGINT 
+[info] i  auth: Stopping Authentication Emulator {"metadata":{"emulator":{"name":"auth"},"message":"Stopping Authentication Emulator"}}
+[info] i  hub: Stopping emulator hub {"metadata":{"emulator":{"name":"hub"},"message":"Stopping emulator hub"}}
+[info] i  logging: Stopping Logging Emulator {"metadata":{"emulator":{"name":"logging"},"message":"Stopping Logging Emulator"}}
+[debug] [2023-04-18T14:09:48.110Z] Received signal SIGINT (Ctrl-C) 2
+[info]  
+[debug] [2023-04-18T14:09:48.110Z] Skipping clean onExit() and cleanShutdown()
+[warn] !  emulators: Received SIGINT (Ctrl-C) 2 times. You have forced the Emulator Suite to exit without waiting for 0 subprocess to finish. These processes may still be running on your machine:  
+[info] 
+┌──────────┬───────────┬─────┐
+│ Emulator │ Host:Port │ PID │
+└──────────┴───────────┴─────┘
+
+To force them to exit run:
+
+[info] TASKKILL  /T
+
+[debug] [2023-04-18T14:09:49.530Z] Received signal SIGINT (Ctrl-C) 3
+[info]  
+[debug] [2023-04-18T14:09:49.531Z] Skipping clean onExit() and cleanShutdown()
+[warn] !  emulators: Received SIGINT (Ctrl-C) 3 times. You have forced the Emulator Suite to exit without waiting for 0 subprocess to finish. These processes may still be running on your machine:  
+[info] 
+┌──────────┬───────────┬─────┐
+│ Emulator │ Host:Port │ PID │
+└──────────┴───────────┴─────┘
+
+To force them to exit run:
+
+[info] TASKKILL  /T
+
+[debug] [2023-04-18T14:09:57.966Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\tri\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:253:49)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+[error] 
+[error] Error: An unexpected error has occurred.
