@@ -18,5 +18,5 @@ spec:
         - name: auth-service
           image: auth-service
           ports:
-            - containerPort: 8085
+            - containerPort: 5000
           imagePullPolicy: Never
