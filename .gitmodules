@@ -7,3 +7,9 @@
 [submodule "post-service"]
 	path = post-service
 	url = https://github.com/vvtri/sim-fri-post-service
+[submodule "file-service"]
+	path = file-service
+	url = https://github.com/vvtri/sim-fri-file-service
+[submodule "shared"]
+	path = shared
+	url = https://github.com/vvtri/sim-fri-shared
