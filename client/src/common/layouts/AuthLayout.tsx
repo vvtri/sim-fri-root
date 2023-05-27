@@ -10,7 +10,9 @@ export default function AuthLayout({ children }: AuthLayoutProps) {
   return (
     <Stack
       width={{ sm: '100vw' }}
-      height={{ sm: '100vh' }}
+      height={{ sm: '100%' }}
+      minHeight={{ sm: '100vh' }}
+      padding="30px"
       direction={{ xs: 'column', md: 'row' }}
       alignItems={{ md: 'center' }}
       justifyContent={{ md: 'center' }}

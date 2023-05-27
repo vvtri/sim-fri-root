@@ -1,6 +1,6 @@
 import { Box, Button } from '@mui/material';
 import { AuthGuard } from '../common/guards/AuthGuard';
-import { deleteAccessToken } from '../common/utils/index.util';
+import { deleteAccessToken } from '../common/utils/auth.util';
 import { useAppDispatch } from '../redux/hook';
 import { setAuth } from '../redux/slices/auth.slice';
 

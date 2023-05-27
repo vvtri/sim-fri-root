@@ -1,4 +1,7 @@
 import { Box, GlobalStyles } from '@mui/material';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { SnackbarProvider } from 'notistack';
 import { useEffect } from 'react';
 import { useAppDispatch } from '../../redux/hook';
 import { fetchUserThunk } from '../../redux/slices/auth.slice';
@@ -15,22 +18,30 @@ export const AppWrapper = ({ children }: { children: any }) => {
       <GlobalStyles
         styles={{
           'input:-webkit-autofill': {
-            '-webkit-box-shadow': '0 0 0 30px white inset !important',
+            WebkitBoxShadow: '0 0 0 30px white inset !important',
           },
           'input:-webkit-autofill:hover': {
-            '-webkit-box-shadow': '0 0 0 30px white inset !important',
+            WebkitBoxShadow: '0 0 0 30px white inset !important',
           },
           'input:-webkit-autofill:focus': {
-            '-webkit-box-shadow': '0 0 0 30px white inset !important',
+            WebkitBoxShadow: '0 0 0 30px white inset !important',
           },
           'input:-webkit-autofill:activ': {
-            '-webkit-box-shadow': '0 0 0 30px white inset !important',
+            WebkitBoxShadow: '0 0 0 30px white inset !important',
           },
-          a: { textDecoration: 'none' },
+          'a, a:hover': { textDecoration: 'none', color: 'inherit' },
           'input::-ms-reveal': { display: 'none' },
+          img: { display: 'block' },
         }}
       />
-      {children}
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <SnackbarProvider
+          anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
+          maxSnack={3}
+        >
+          {children}
+        </SnackbarProvider>
+      </LocalizationProvider>
     </Box>
   );
 };

@@ -13,6 +13,7 @@ import axios from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
+import FormProvider from '../../../common/components/hook-forms/FormProvider';
 import { DEFAULT_MESSAGE } from '../../../common/constants/index.constant';
 import { IApiError } from '../../../common/interfaces/api-error.interface';
 import { AuthStatusCode } from '../../../common/status-code/auth.status-code';
@@ -31,10 +32,11 @@ export const ResendVerificationForm = () => {
   const dispatch = useAppDispatch();
   const router = useRouter();
 
+  const methods = useForm<IResendVerificationForm>({
+    resolver: yupResolver(resendVerificationSchema),
+  });
   const { register, control, formState, handleSubmit, setError, getValues } =
-    useForm<IResendVerificationForm>({
-      resolver: yupResolver(resendVerificationSchema),
-    });
+    methods;
   const { errors } = formState;
   const { isLoading, mutate } = useResendVerification({
     onSuccess(data, variables, context) {
@@ -64,102 +66,107 @@ export const ResendVerificationForm = () => {
   });
 
   return (
-    <>
-      <Stack
-        component="form"
-        direction="column"
-        bgcolor="white"
-        width="100%"
-        padding={{ md: '20px 15px 20px' }}
-        maxWidth="400px"
-        noValidate
+    <Box
+      bgcolor="white"
+      padding={{ md: '20px 15px 20px' }}
+      width="100%"
+      maxWidth="400px"
+    >
+      <FormProvider
+        methods={methods}
         onSubmit={handleSubmit((data) => mutate(data))}
-        spacing="12px"
       >
-        <Box display="flex" justifyContent="center" alignItems="center">
-          <Typography variant="h4" fontWeight="bold">
-            Gửi lại mã xác thực
-          </Typography>
-        </Box>
-        <FormControl>
-          <TextField
-            variant="outlined"
-            color="primary"
-            label="Email"
-            fullWidth
-            error={Boolean(errors.email)}
-            helperText={errors.email?.message as any}
-            {...register('email')}
-          />
-        </FormControl>
-        <Box>
-          <LoadingButton
-            color="primary"
-            variant="contained"
-            fullWidth
-            sx={{ fontSize: '16px' }}
-            type="submit"
-            loading={isLoading}
-          >
-            Xác nhận
-          </LoadingButton>
-        </Box>
-        {errors.root?.message && (
-          <FormHelperText error>{errors.root?.message}</FormHelperText>
-        )}
-        <Stack
-          mt="12px"
-          alignItems="center"
-          justifyContent="space-between"
-          direction="row"
-          paddingX={{ md: '20px' }}
-        >
-          <Link href="/auth/reset-password">
-            <Typography
-              paragraph
-              fontSize="14px"
-              fontWeight={500}
-              color="primary.main"
-              sx={{ '&:hover': { textDecoration: 'underline' } }}
-            >
-              Quên mật khẩu
-            </Typography>
-          </Link>
-
-          <Link href="/auth/verification/resend">
-            <Typography
-              paragraph
-              fontSize="14px"
-              fontWeight={500}
-              color="primary.main"
-              sx={{ '&:hover': { textDecoration: 'underline' } }}
-            >
+        <Stack direction="column" width="100%" spacing="12px">
+          <Box display="flex" justifyContent="center" alignItems="center">
+            <Typography variant="h4" fontWeight="bold">
               Gửi lại mã xác thực
             </Typography>
-          </Link>
-        </Stack>
-        <Box margin="20px 0" bgcolor="#dadde1" height="1px" width="100%"></Box>
-        <Stack justifyContent="center">
-          <Box
-            component="button"
-            margin="auto"
-            bgcolor="secondary.main"
-            borderRadius="6px"
-            padding="0 16px"
-            height={{ md: '48px' }}
-            sx={{ '&:hover': { bgcolor: 'secondary.dark' } }}
-            lineHeight="48px"
-            fontWeight="bold"
-          >
-            <Link href="/auth/register">
-              <Box color="white" fontSize="17px">
-                Tạo tài khoản mới
-              </Box>
-            </Link>
           </Box>
+          <FormControl>
+            <TextField
+              variant="outlined"
+              color="primary"
+              label="Email"
+              fullWidth
+              error={Boolean(errors.email)}
+              helperText={errors.email?.message as any}
+              {...register('email')}
+            />
+          </FormControl>
+          <Box>
+            <LoadingButton
+              color="primary"
+              variant="contained"
+              fullWidth
+              sx={{ fontSize: '16px' }}
+              type="submit"
+              loading={isLoading}
+            >
+              Xác nhận
+            </LoadingButton>
+          </Box>
+          {errors.root?.message && (
+            <FormHelperText error>{errors.root?.message}</FormHelperText>
+          )}
+          <Stack
+            mt="12px"
+            alignItems="center"
+            justifyContent="space-between"
+            direction="row"
+            paddingX={{ md: '20px' }}
+          >
+            <Link href="/auth/reset-password">
+              <Typography
+                paragraph
+                fontSize="14px"
+                fontWeight={500}
+                color="primary.main"
+                sx={{ '&:hover': { textDecoration: 'underline' } }}
+              >
+                Quên mật khẩu
+              </Typography>
+            </Link>
+
+            <Link href="/auth/verification/resend">
+              <Typography
+                paragraph
+                fontSize="14px"
+                fontWeight={500}
+                color="primary.main"
+                sx={{ '&:hover': { textDecoration: 'underline' } }}
+              >
+                Gửi lại mã xác thực
+              </Typography>
+            </Link>
+          </Stack>
+          <Box
+            margin="20px 0"
+            bgcolor="#dadde1"
+            height="1px"
+            width="100%"
+          ></Box>
+          <Stack justifyContent="center">
+            <Box
+              component="button"
+              margin="auto"
+              bgcolor="secondary.main"
+              borderRadius="6px"
+              padding="0 16px"
+              height={{ md: '48px' }}
+              sx={{ '&:hover': { bgcolor: 'secondary.dark' } }}
+              lineHeight="48px"
+              fontWeight="bold"
+            >
+              <Link href="/auth/register">
+                <Box color="white" fontSize="17px">
+                  Tạo tài khoản mới
+                </Box>
+              </Link>
+            </Box>
+          </Stack>
         </Stack>
-      </Stack>
+      </FormProvider>
       <DevTool control={control} />
-    </>
+    </Box>
   );
 };

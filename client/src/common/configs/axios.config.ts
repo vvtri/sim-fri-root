@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { refreshTokenUrl } from '../../auth/common/apis/index.api';
+import { RefreshTokenPayload } from '../../auth/common/interfaces/payload/refresh-token.payload';
 import { IAuthTokenRes } from '../../auth/common/interfaces/res/auth-token.res.interface';
 import {
   BASE_URL,
@@ -6,7 +8,7 @@ import {
 } from '../constants/index.constant';
 import { IApiError } from '../interfaces/api-error.interface';
 import { AuthStatusCode } from '../status-code/auth.status-code';
-import { saveAccessToken } from '../utils/index.util';
+import { getRefreshToken, saveAccessToken } from '../utils/auth.util';
 
 const axiosClient = axios.create({
   baseURL: BASE_URL,
@@ -38,10 +40,15 @@ axiosClient.interceptors.response.use(
       if (originalRequest && !originalRequest.__retry) {
         originalRequest.__retry = true;
 
+        const refreshToken = getRefreshToken();
+        if (!refreshToken) throw error;
+
         // Refresh token without interceptor
-        const { accessToken } = await axiosClient.post<any, IAuthTokenRes>(
-          `${BASE_URL}/auth/refresh-token`,
-        );
+        const { accessToken } = await axiosClient.post<
+          any,
+          IAuthTokenRes,
+          RefreshTokenPayload
+        >(`${BASE_URL}${refreshTokenUrl}`, { refreshToken });
         saveAccessToken(accessToken);
 
         // Perform original request

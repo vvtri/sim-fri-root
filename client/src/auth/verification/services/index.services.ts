@@ -1,5 +1,8 @@
 import axiosClient from '../../../common/configs/axios.config';
-import { resendVerificationUrl, verifyUserUrl } from '../../common/apis/urls';
+import {
+  resendVerificationUrl,
+  verifyUserUrl,
+} from '../../common/apis/index.api';
 import { IAuthTokenRes } from '../../common/interfaces/res/auth-token.res.interface';
 import {
   IResendVerificationPayload,

@@ -12,9 +12,9 @@ import {
 import axios from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { RHFPassword } from '../../../common/components/RHFPassword';
+import FormProvider from '../../../common/components/hook-forms/FormProvider';
+import { RHFPassword } from '../../../common/components/hook-forms/RHFPassword';
 import { DEFAULT_MESSAGE } from '../../../common/constants/index.constant';
 import { useAuth } from '../../../common/hooks/useAuth';
 import { IApiError } from '../../../common/interfaces/api-error.interface';
@@ -32,10 +32,11 @@ export const RegisterForm = () => {
   const router = useRouter();
   const { user } = useAuth();
 
+  const methods = useForm<IRegisterForm>({
+    resolver: yupResolver(registerSchema),
+  });
   const { register, control, formState, handleSubmit, setError, getValues } =
-    useForm<IRegisterForm>({
-      resolver: yupResolver(registerSchema),
-    });
+    methods;
   const { errors } = formState;
 
   const { mutate, isLoading } = useRegister({
@@ -58,122 +59,117 @@ export const RegisterForm = () => {
     },
   });
 
-
   return (
-    <>
-      <Stack
-        component="form"
-        direction="column"
-        bgcolor="white"
-        width="100%"
-        padding={{ md: '20px 15px 20px' }}
-        maxWidth="400px"
-        noValidate
+    <Box
+      bgcolor="white"
+      padding={{ md: '20px 15px 20px' }}
+      width="100%"
+      maxWidth="400px"
+    >
+      <FormProvider
+        methods={methods}
         onSubmit={handleSubmit((data) => mutate(data))}
-        spacing="12px"
       >
-        <Box display="flex" justifyContent="center" alignItems="center">
-          <Typography variant="h4" fontWeight="bold">
-            Đăng ký
-          </Typography>
-        </Box>
-        <FormControl>
-          <TextField
+        <Stack direction="column" width="100%" spacing="12px">
+          <Box display="flex" justifyContent="center" alignItems="center">
+            <Typography variant="h4" fontWeight="bold">
+              Đăng ký
+            </Typography>
+          </Box>
+          <FormControl>
+            <TextField
+              variant="outlined"
+              color="primary"
+              label="Email"
+              fullWidth
+              error={Boolean(errors.email)}
+              helperText={errors.email?.message as any}
+              {...register('email')}
+            />
+          </FormControl>
+          <RHFPassword label="Mật khẩu" name="password" />
+          <RHFPassword
+            name="rePassword"
+            label="Nhập lại mật khẩu"
             variant="outlined"
             color="primary"
-            label="Email"
             fullWidth
-            error={Boolean(errors.email)}
-            helperText={errors.email?.message as any}
-            {...register('email')}
           />
-        </FormControl>
-        <RHFPassword
-          error={Boolean(errors.password)}
-          helperText={errors.password?.message as any}
-          register={register('password')}
-          label="Mật khẩu"
-          variant="outlined"
-          color="primary"
-          fullWidth
-        />
-        <RHFPassword
-          error={Boolean(errors.rePassword)}
-          helperText={errors.rePassword?.message as any}
-          register={register('rePassword')}
-          label="Nhập lại mật khẩu"
-          variant="outlined"
-          color="primary"
-          fullWidth
-        />
-        <Box>
-          <LoadingButton
-            color="primary"
-            variant="contained"
-            fullWidth
-            sx={{ fontSize: '16px' }}
-            type="submit"
-            loading={isLoading}
-          >
-            Đăng ký
-          </LoadingButton>
-        </Box>
-        {errors.root?.message && (
-          <FormHelperText error>{errors.root?.message}</FormHelperText>
-        )}
-        <Stack
-          mt="12px"
-          alignItems="center"
-          justifyContent="space-between"
-          direction="row"
-          paddingX={{ md: '20px' }}
-        >
-          <Link href="/auth/reset-password">
-            <Typography
-              paragraph
-              fontSize="14px"
-              fontWeight={500}
-              color="primary.main"
-              sx={{ '&:hover': { textDecoration: 'underline' } }}
+          <Box>
+            <LoadingButton
+              color="primary"
+              variant="contained"
+              fullWidth
+              sx={{ fontSize: '16px' }}
+              type="submit"
+              loading={isLoading}
             >
-              Quên mật khẩu
-            </Typography>
-          </Link>
-
-          <Link href="/auth/verification/resend">
-            <Typography
-              paragraph
-              fontSize="14px"
-              fontWeight={500}
-              color="primary.main"
-              sx={{ '&:hover': { textDecoration: 'underline' } }}
-            >
-              Gửi lại mã xác thực
-            </Typography>
-          </Link>
-        </Stack>
-        <Box margin="20px 0" bgcolor="#dadde1" height="1px" width="100%"></Box>
-        <Stack justifyContent="center">
-          <Box
-            component="button"
-            margin="auto"
-            bgcolor="secondary.main"
-            borderRadius="6px"
-            padding="0 16px"
-            height={{ md: '48px' }}
-            sx={{ '&:hover': { bgcolor: 'secondary.dark' } }}
-            lineHeight="48px"
-            fontWeight="bold"
-          >
-            <Link href="/auth/login">
-              <Box color="white" fontSize="17px">
-                Đăng nhập
-              </Box>
-            </Link>
+              Đăng ký
+            </LoadingButton>
           </Box>
+          {errors.root?.message && (
+            <FormHelperText error>{errors.root?.message}</FormHelperText>
+          )}
+          <Stack
+            mt="12px"
+            alignItems="center"
+            justifyContent="space-between"
+            direction="row"
+            paddingX={{ md: '20px' }}
+          >
+            <Link href="/auth/reset-password">
+              <Typography
+                paragraph
+                fontSize="14px"
+                fontWeight={500}
+                color="primary.main"
+                sx={{ '&:hover': { textDecoration: 'underline' } }}
+              >
+                Quên mật khẩu
+              </Typography>
+            </Link>
+
+            <Link href="/auth/verification/resend">
+              <Typography
+                paragraph
+                fontSize="14px"
+                fontWeight={500}
+                color="primary.main"
+                sx={{ '&:hover': { textDecoration: 'underline' } }}
+              >
+                Gửi lại mã xác thực
+              </Typography>
+            </Link>
+          </Stack>
+          <Box
+            margin="20px 0"
+            bgcolor="#dadde1"
+            height="1px"
+            width="100%"
+          ></Box>
+          <Stack justifyContent="center">
+            <Box
+              component="button"
+              margin="auto"
+              bgcolor="secondary.main"
+              borderRadius="6px"
+              padding="0 16px"
+              height={{ md: '48px' }}
+              sx={{ '&:hover': { bgcolor: 'secondary.dark' } }}
+              lineHeight="48px"
+              fontWeight="bold"
+            >
+              <Link href="/auth/login">
+                <Box color="white" fontSize="17px">
+                  Đăng nhập
+                </Box>
+              </Link>
+            </Box>
+          </Stack>
         </Stack>
-      </Stack>
+      </FormProvider>
+
       <DevTool control={control} />
-    </>
+    </Box>
   );
 };

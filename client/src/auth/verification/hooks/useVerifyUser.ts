@@ -1,6 +1,6 @@
 import { MutationOptions, useMutation } from 'react-query';
 import { IAuthTokenRes } from '../../common/interfaces/res/auth-token.res.interface';
-import { resendVerification, verifyUser } from '../apis/index.api';
+import { resendVerification, verifyUser } from '../services/index.services';
 import {
   IResendVerificationPayload,
   IVerifyUserPayload,

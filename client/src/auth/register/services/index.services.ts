@@ -1,5 +1,5 @@
 import axiosClient from '../../../common/configs/axios.config';
-import { registerUserUrl } from '../../common/apis/urls';
+import { registerUserUrl } from '../../common/apis/index.api';
 import { IAuthTokenRes } from '../../common/interfaces/res/auth-token.res.interface';
 import { IRegisterUserPayload } from '../interfaces/payload.interface';
 

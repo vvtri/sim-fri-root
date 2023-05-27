@@ -1,6 +1,6 @@
 import { MutationOptions, useMutation } from 'react-query';
 import { IAuthTokenRes } from '../../common/interfaces/res/auth-token.res.interface';
-import { register } from '../apis/index.api';
+import { register } from '../services/index.services';
 import { IRegisterUserPayload } from '../interfaces/payload.interface';
 
 export const useRegister = (

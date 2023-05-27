@@ -1,10 +1,10 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IUser } from '../../auth/common/interfaces/res/user.res.interface';
-import { fetchUser } from '../../auth/login/apis/index.api';
+import { IUserProfile } from '../../profile/common/models/user-profile.model';
+import { getProfile } from '../../profile/detail/services/profile-detail.service';
 import { RootState } from '../store';
 
 interface AuthState {
-  user: IUser | null;
+  user: IUserProfile | null;
   isLoading: boolean;
 }
 
@@ -15,7 +15,7 @@ const initialState: AuthState = {
 
 const fetchUserThunk = createAsyncThunk('auth/fetchUser', async () => {
   try {
-    const user = await fetchUser();
+    const user = await getProfile();
     return user;
   } catch (error) {
     console.log(error);
@@ -27,10 +27,7 @@ const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    setAuth: (
-      state,
-      { payload }: PayloadAction<{ user: IUser | null; isLoading: boolean }>,
-    ) => {
+    setAuth: (state, { payload }: PayloadAction<AuthState>) => {
       state.user = payload.user;
       state.isLoading = payload.isLoading;
     },
