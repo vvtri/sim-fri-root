@@ -1,0 +1,30 @@
+apiVersion: skaffold/v4beta2
+kind: Config
+metadata:
+  name: sim-fri
+build:
+  local:
+    concurrency: 0
+    push: false
+  artifacts:
+    - image: docker.io/auth-service
+      context: auth-service
+      docker:
+        dockerfile: ./auth-service/Dockerfile
+    - image: docker.io/file-service
+      context: file-service
+      docker:
+        dockerfile: ./file-service/Dockerfile
+    - image: docker.io/post-service
+      context: post-service
+      docker:
+        dockerfile: ./post-service/Dockerfile
+manifests:
+  rawYaml:
+    - infra/ingress.yml
+    - infra/auth-service/deploy.yml
+    - infra/auth-service/service.yml
+    - infra/file-service/deploy.yml
+    - infra/file-service/service.yml
+    - infra/post-service/deploy.yml
+    - infra/post-service/service.yml

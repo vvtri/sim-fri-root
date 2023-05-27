@@ -16,6 +16,20 @@ spec:
                 name: auth-service
                 port:
                   number: 5000
+          - path: /api/file/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: file-service
+                port:
+                  number: 5000
+          - path: /api/post/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: post-service
+                port:
+                  number: 5000
           - path: /?(.*)
             pathType: Prefix
             backend:

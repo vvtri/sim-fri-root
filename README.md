@@ -1,6 +1,8 @@
 ### Create image:
 
 1. docker build -t auth-service .
+2. docker build -t post-service .
+3. docker build -t file-service .
 
 ### Github Submodule:
 
