@@ -13,3 +13,12 @@
 [submodule "shared"]
 	path = shared
 	url = https://github.com/vvtri/sim-fri-shared
+[submodule "friend-service"]
+	path = friend-service
+	url = https://github.com/vvtri/sim-fri-friend-service
+[submodule "message-service"]
+	path = message-service
+	url = https://github.com/vvtri/sim-fri-message-service
+[submodule "base-service"]
+	path = base-service
+	url = https://github.com/vvtri/sim-fri-base-service
