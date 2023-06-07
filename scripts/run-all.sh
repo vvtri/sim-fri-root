@@ -6,5 +6,6 @@ cd auth-service && yarn dev &
 cd post-service && yarn dev &
 cd file-service && yarn dev &
 cd message-service && yarn dev &
+cd friend-service && yarn dev &
 
 wait
