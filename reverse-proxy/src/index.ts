@@ -39,16 +39,31 @@ http
       });
     }
 
+    if (path.includes('post-service')) {
+      proxy.web(req, res, {
+        target: `http://localhost:5001`,
+      });
+    }
+
     if (path.includes('file-service')) {
       proxy.web(req, res, {
         target: `http://localhost:5002`,
       });
     }
 
-    if (path.includes('post-service')) {
+    if (path.includes('message-service')) {
       proxy.web(req, res, {
-        target: `http://localhost:5001`,
+        target: `http://localhost:5003`,
       });
     }
+    
+    if (path.includes('friend-service')) {
+      proxy.web(req, res, {
+        target: `http://localhost:5004`,
+      });
+    }
+
+    res.statusCode = 500;
+    return res;
   })
   .listen(8080, () => console.log('listening at 8080'));
