@@ -9,7 +9,7 @@ cd post-service && git add . && git cmm "'"$2"'" && git push &
 cd file-service && git add . && git cmm "'"$2"'" && git push &
 cd message-service && git add . && git cmm "'"$2"'" && git push &
 cd friend-service && git add . && git cmm "'"$2"'" && git push &
-cd shared-service && git add . && git cmm "'"$2"'" && git push &
+cd shared && git add . && git cmm "'"$2"'" && git push &
 cd file-service && git add . && git cmm "'"$2"'" && git push &
 
 wait
