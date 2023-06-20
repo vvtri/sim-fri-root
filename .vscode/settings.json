@@ -23,5 +23,6 @@
   ],
   "github-actions.workflows.pinned.workflows": [
     ".github/workflows/loyalty-event-deploy.yaml"
-  ]
+  ],
+  "cSpell.words": ["noties"]
 }

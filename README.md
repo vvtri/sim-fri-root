@@ -16,5 +16,6 @@
 3. http://localhost:5002/api/file-service/swagger
 4. http://localhost:5003/api/message-service/swagger
 5. http://localhost:5004/api/friend-service/swagger
+5. http://localhost:5005/api/noti-service/swagger
 
 ### Confluent: 6051071126+2@st.utc2.edu.vn

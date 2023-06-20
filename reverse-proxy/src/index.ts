@@ -56,10 +56,16 @@ http
         target: `http://localhost:5003`,
       });
     }
-    
+
     if (path.includes('friend-service')) {
       proxy.web(req, res, {
         target: `http://localhost:5004`,
+      });
+    }
+
+    if (path.includes('noti-service')) {
+      proxy.web(req, res, {
+        target: `http://localhost:5005`,
       });
     }
 

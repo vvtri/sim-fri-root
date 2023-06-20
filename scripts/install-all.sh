@@ -8,5 +8,6 @@
 (cd message-service && yarn)
 (cd common && yarn)
 (cd shared && yarn)
+(cd noti-service && yarn)
 
 wait

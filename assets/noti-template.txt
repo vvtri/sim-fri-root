@@ -1,0 +1,27 @@
+use-i18n: post --> bài viết --> đưa vào template
+
+comment: 
+
+{{{name}}} commented on your {{{target}}}
+{{{name}}} đã bình luận trên {{{target}}} của bạn
+
+  param: {
+    name: tri 
+    target: 'post'
+  }
+
+like: 
+
+{{{name}}} likes your {{{target}}}: "{{content}}"
+{{{name}}} đã thích {{{target}}} của bạn: "{{content}}"
+
+  param: {
+    name: tri 
+    target: 'post'
+  }
+
+
+mention: 
+
+{{{name}}} mentioned on your post
+{{{name}}} đã bình luận trên bài viết của bạn

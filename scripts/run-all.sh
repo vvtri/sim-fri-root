@@ -7,5 +7,6 @@ cd post-service && yarn dev &
 cd file-service && yarn dev &
 cd message-service && yarn dev &
 cd friend-service && yarn dev &
+cd noti-service && yarn dev &
 
 wait

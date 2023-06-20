@@ -14,18 +14,30 @@ api:
 10. mutual friends //done
 11. message to person -- test meesage to conversation
 12. view friends in profile // done
-13. allow mute mic, turn off camera video call
+13. allow mute mic, turn off camera video call //done
 14. fix infinite list post home //done
-15. allow undo reaction
-16. update/delete post/comment
-17. friend screen
-18. reload friend //done
-19. do create message box
+15. allow undo reaction //done
+16. friend screen //done
+17. reload friend //done
+18. friend screen //done
+19. allow mute mic, turn off camera video call // done
+20. merge post dialog vs post card//done
+21. logout button //done
+22. allow undo reaction // done
+23. search // done
+24. count unread message //done
+25. noti system //done
+27. update/delete post/comment // done
+34. noti count //done
 
-20. allow mute mic, turn off camera video call
-21. allow undo reaction
-22. update/delete post/comment // later
-23. friend screen
-24. do create message box //later
-25. search people //profile, post
+32. send emoji
+32. image viewer
+
+33. read all noti
 26. reaction message
+
+28. do create message box //later
+29. do create message box
+30. update/delete post/comment
+31. test message to conversation
+  
