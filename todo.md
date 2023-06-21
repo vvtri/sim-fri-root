@@ -27,17 +27,16 @@ api:
 23. search // done
 24. count unread message //done
 25. noti system //done
-27. update/delete post/comment // done
-34. noti count //done
+26. update/delete post/comment // done
+27. noti count //done
+28. send emoji //done
 
-32. send emoji
-32. image viewer
+29. image viewer
+30. fix delete noti after comment deleted
 
-33. read all noti
-26. reaction message
+31. read all noti
+32. reaction message
 
-28. do create message box //later
-29. do create message box
-30. update/delete post/comment
-31. test message to conversation
-  
+33. do create message box //later
+34. do create message box
+35. test message to conversation
