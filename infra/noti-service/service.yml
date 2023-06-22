@@ -1,0 +1,13 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: noti-service
+spec:
+  selector:
+    app: noti-service
+  type: NodePort
+  ports:
+    - port: 5005
+      targetPort: 5005
+      protocol: TCP

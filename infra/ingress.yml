@@ -9,31 +9,52 @@ spec:
   rules:
     - http:
         paths:
-          - path: /api/auth/?(.*)
+          - path: /api/auth-service/?(.*)
             pathType: Prefix
             backend:
               service:
                 name: auth-service
                 port:
                   number: 5000
-          - path: /api/file/?(.*)
+          - path: /api/file-service/?(.*)
             pathType: Prefix
             backend:
               service:
                 name: file-service
                 port:
                   number: 5000
-          - path: /api/post/?(.*)
+          - path: /api/post-service/?(.*)
             pathType: Prefix
             backend:
               service:
                 name: post-service
                 port:
                   number: 5000
-          - path: /?(.*)
+          - path: /api/message-service/?(.*)
             pathType: Prefix
             backend:
               service:
-                name: client
+                name: message-service
                 port:
-                  number: 3000
+                  number: 5000
+          - path: /api/friend-service/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: friend-service
+                port:
+                  number: 5000
+          - path: /api/noti-service/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: noti-service
+                port:
+                  number: 5000
+          # - path: /?(.*)
+          #   pathType: Prefix
+          #   backend:
+          #     service:
+          #       name: client
+          #       port:
+          #         number: 3000

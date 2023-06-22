@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: auth-service
+  name: message-service
   labels:
-    app: auth-service
+    app: message-service
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: auth-service
+      app: message-service
   template:
     metadata:
       labels:
-        app: auth-service
+        app: message-service
     spec:
       containers:
-        - name: auth-service
-          image: docker.io/vtri/auth-service
+        - name: message-service
+          image: docker.io/vtri/message-service
           ports:
             - containerPort: 5000
           # imagePullPolicy: Always
