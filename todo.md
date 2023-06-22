@@ -1,7 +1,3 @@
-1. fix title page update profile after login
-
-api:
-
 1. api friends posts //done
 2. api friends of friend (friend suggestion) //done
 3. api list friends's post //done
@@ -30,13 +26,11 @@ api:
 26. update/delete post/comment // done
 27. noti count //done
 28. send emoji //done
+29. do create message box // done
+30. fix delete noti after comment deleted //done
+31. test message to conversation //done
 
-29. image viewer
-30. fix delete noti after comment deleted
+32. image viewer
 
-31. read all noti
-32. reaction message
-
-33. do create message box //later
-34. do create message box
-35. test message to conversation
+33. read all noti
+34. reaction message
