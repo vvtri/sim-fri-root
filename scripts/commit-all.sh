@@ -12,6 +12,7 @@ cd friend-service && git add . && git cmm "$1" && git push &
 cd shared && git add . && git cmm "$1" && git push &
 cd file-service && git add . && git cmm "$1" && git push &
 cd noti-service && git add . && git cmm "$1" && git push &
+cd infra && git add . && git cmm "$1" && git push &
 
 wait
 

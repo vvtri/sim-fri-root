@@ -36,3 +36,8 @@
 
 35. read all noti
 36. reaction message
+
+deploy:
+create redis
+create kafka
+change env db
