@@ -24,5 +24,8 @@
   "github-actions.workflows.pinned.workflows": [
     ".github/workflows/loyalty-event-deploy.yaml"
   ],
-  "cSpell.words": ["noties"]
+  "cSpell.words": ["noties"],
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/deployphp/deployer/master/src/schema.json": "file:///d%3A/school/do_an/sim-fri/infra/client/deploy.yml"
+  }
 }
