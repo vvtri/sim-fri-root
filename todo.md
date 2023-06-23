@@ -30,7 +30,9 @@
 30. fix delete noti after comment deleted //done
 31. test message to conversation //done
 
-32. image viewer
+32. add kafka to word, convert word to pdf, print pdf, record video application
+33. retest flow message friend
+34. image viewer
 
-33. read all noti
-34. reaction message
+35. read all noti
+36. reaction message
