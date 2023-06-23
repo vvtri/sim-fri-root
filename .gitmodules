@@ -22,3 +22,6 @@
 [submodule "base-service"]
 	path = base-service
 	url = https://github.com/vvtri/sim-fri-base-service
+[submodule "client"]
+	path = client
+	url = https://github.com/vvtri/sim-fri-client
