@@ -28,3 +28,6 @@
 [submodule "noti-service"]
 	path = noti-service
 	url = https://github.com/vvtri/sim-fri-noti-service
+[submodule "infra"]
+	path = infra
+	url = https://github.com/vvtri/sim-fri-infra
