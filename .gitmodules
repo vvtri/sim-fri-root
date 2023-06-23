@@ -25,3 +25,6 @@
 [submodule "client"]
 	path = client
 	url = https://github.com/vvtri/sim-fri-client
+[submodule "noti-service"]
+	path = noti-service
+	url = https://github.com/vvtri/sim-fri-noti-service
