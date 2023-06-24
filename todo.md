@@ -33,9 +33,11 @@
 32. add kafka to word, convert word to pdf, print pdf, record video application
 33. retest flow message friend
 34. image viewer
+35. fix bug conversation
+36. fix bug enter chat
 
-35. read all noti
-36. reaction message
+37. read all noti
+38. reaction message
 
 deploy:
 create redis
