@@ -3,13 +3,15 @@
    2. Có thể làm gì
 2. Đi vào các chức năng
    1. Post
-      1. Post reaction
-      2. Post edit/delete
-      3. Post audience
+      1. View
+      2. Post reaction
+      3. Post edit/delete
+      4. Post audience
    2. Comment
-      1. Comment reaction
-      2. Comment edit/delete
-      3. Reply comments
+      1. View
+      2. Comment reaction
+      3. Comment edit/delete
+      4. Reply comments
    3. Notification
       1. post
       2. comment / reply comment
