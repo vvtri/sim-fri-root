@@ -34,12 +34,13 @@
 34. add kafka to word, convert word to pdf, print pdf, //done
 35. fix bug conversation //done
 36. fix bug enter chat //done
+37. fix bug post dialog redirect //done
+38. fix bug send message create two box //done
 
-37. record video application
-38. fix bug post dialog redirect
+39. record video application
 
-39. read all noti
-40. reaction message
+40. read all noti
+41. reaction message
 
 deploy:
 create redis
