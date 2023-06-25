@@ -38,9 +38,10 @@
 38. fix bug send message create two box //done
 
 39. record video application
+40. add sharp image
 
-40. read all noti
-41. reaction message
+41. read all noti
+42. reaction message
 
 deploy:
 create redis
