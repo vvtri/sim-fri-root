@@ -19,3 +19,7 @@
 6. http://localhost:5005/api/noti-service/swagger
 
 ### Confluent: 6051071126+2@st.utc2.edu.vn
+
+### K8s:
+
+1. delete evicted pod: kubectl -n default delete pods --field-selector=status.phase=Failed

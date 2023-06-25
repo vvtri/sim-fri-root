@@ -29,15 +29,17 @@
 29. do create message box // done
 30. fix delete noti after comment deleted //done
 31. test message to conversation //done
+32. retest flow message friend //done
+33. image viewer //done
+34. add kafka to word, convert word to pdf, print pdf, //done
+35. fix bug conversation //done
+36. fix bug enter chat //done
 
-32. add kafka to word, convert word to pdf, print pdf, record video application
-33. retest flow message friend
-34. image viewer
-35. fix bug conversation
-36. fix bug enter chat
+37. record video application
+38. fix bug post dialog redirect
 
-37. read all noti
-38. reaction message
+39. read all noti
+40. reaction message
 
 deploy:
 create redis
