@@ -4,13 +4,13 @@
 2. Đi vào các chức năng
    1. Post
       1. View
-      2. Post reaction
-      3. Post edit/delete
-      4. Post audience
+      2. Post edit/delete
+      3. Post audience
+      4. Post reaction
    2. Comment
       1. View
-      2. Comment reaction
-      3. Comment edit/delete
+      2. Comment edit/delete
+      3. Comment reaction
       4. Reply comments
    3. Notification
       1. post
