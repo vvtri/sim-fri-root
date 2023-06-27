@@ -22,8 +22,8 @@
       3. Friend suggestion
       4. Friend notification
    5. Message
-      1. List conversation / search
-      2. Send message
+      1. Lismessaget conversation / search
+      2. Send 
       3. Group conversation / Send group message
    6. Call
       1. Call 1vs1
